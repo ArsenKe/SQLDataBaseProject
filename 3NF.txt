@@ -1,0 +1,144 @@
+
+2NF
+
+Data must be in 1 NF
+Each non key field must be about the same thing as the primary key 
+Each table must contain data about only one type of thing
+
+3NF
+
+The data must be in 1NF
+No other non key attribute that you would need to change in table if you changed a non key attribute
+No transitive dependency  
+
+
+-----product-----
+
+RS = {A, B, C, D, E}
+
+A -> B,C,D,E
+B -> A             
+
+N={}
+R={C,D,E}
+L={}
+M={A,B}          
+
+{A,B} = K
+Candidate key : A
+NP: B,C,D,E
+
+
+ A -*> B,C,D,E  
+ 
+
+-----customer-----
+
+RS = {A, B, C, D, E, F}
+
+A -> B,C,D,E,F
+B -> A             
+
+N={}
+R={F,C,D,E}
+L={}
+M={A,B}          
+
+{A,B} = K
+Candidate key : A
+NP: B,C,D,E
+
+
+ A -*> B,C,D,E  
+
+-------cart-------
+
+RS = {A,B,C,D,E}
+
+A -> B,C,D,E
+
+N = {}
+R = {B,C,D,E}
+L = {A}
+M = {}
+  {A} = K
+Candidate key : A
+Non prime : B,C,D,E
+A -*> B,C,D,E
+
+---Orders------
+
+RS = {A,B,C,D,E,F}
+
+A -> B,C,D,E,F
+
+N = {}
+R = {B,C,D,E,F}
+L = {A}
+M = {}
+  {A} = K
+
+Candidate key : A
+Non prime : B,C,D,E,F
+A -*> B,C,D,E,F
+
+
+
+----Shipment -----
+
+RS = {A,B,C,D,E,F,X}
+
+A -> B,C,D,E,F,X
+B -> A             
+
+N={}
+R={C,D,E,F,X}
+L={}
+M={A,B}          
+
+{A,B} = K
+Candidate key : A
+NP: B,C,D,E,F,X
+
+A -*> B,C,D,E,F,X 
+
+
+-----Category-----
+
+
+RS = {A,B,C}
+
+A -> B,C
+B -> A             
+
+N={}
+R={C}
+L={}
+M={A,B,C}          
+
+{A,B,C} = K
+Candidate key : A
+NP: B,C
+
+A -*> B,C
+
+----OnlineShopCategory-----
+
+RS = {A,B}
+
+B -> A
+
+N={}
+R={A}
+L={B}
+M={}          
+
+{B} = K
+Candidate key : B
+NP: A
+
+B -*> A
+
+
+
+
