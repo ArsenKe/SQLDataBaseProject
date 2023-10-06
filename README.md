@@ -1,0 +1,21 @@
+# SQLDataBaseProject
+Online shop Happy Harvest 
+
+I manage to execute DDL to create tables and foreign keys.I loop through all tables and load data from csv. Databasehelper connects
+database. Then, drop existing object if there are any. I create tables with foreign keys separately. Next, write load function for each table
+and call them sequantily. Each function reads respective csv file into a buffer reader row by row. Each row is splitted by comma to create an array
+of columns.
+This columns are passed to insert function to databasehelper class. These insert functions take the column data as parameter, prepare a sql  statement 
+to insert data and execute the statement with an try catch block.If there is exception we are notifed. After loading cvs files to tables the objects are released
+and database connection is closed. During the execution each process displaces consol messages , providing the information about the tuples.
+
+The php app is designed to work behind the secure login. On succesfull login there is dashboard which displays information about various entities , each entity access to listing page.
+The listing page request the data using databasehelper class, and display all the tuples in tableformat. The listpage provides the functionality to search the records, add the new record,
+delete an existing record and modify any displayed record. Clicking an added button opens the new form view, where user can enter or change information and save the database.
+There is another parentchild view which dislays information of the tables connected by foreign key relationship.
+Order detail page shows the ordering information of parent table and all child records or all item in cart table.
+User can add and delete or modify items in cart for any other or modify information on same page. Visual is designed with help of bootstrap.
+
+
+
+
